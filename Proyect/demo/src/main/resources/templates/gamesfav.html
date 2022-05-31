@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- Import css y Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://static.wixstatic.com/media/8bca3a_ccf60ae05d2649a5be9b2fb6da499f38~mv2.png/v1/fill/w_340,h_340,al_c,usm_0.66_1.00_0.01,enc_auto/gameicon.png"
+    />
+    <title>Store Game!</title>
+    <style>
+      /*Hoja de estilos*/
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 0em;
+    background-color: #000000;
+    color: white;
+  }
+  h1 {
+    font-size: 70px;
+    padding-bottom: 20px;
+  }
+  h5 {
+    color: #000000;
+  }
+  p {
+    font-size: 20px;
+    padding-bottom: 40px;
+  }
+  .cover {
+    height: 700px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+      url("https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/gaming-monitor.jpg?v=1649212245514");
+    background-size: cover;
+  }
+  nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+  }
+  .nav-link {
+    color: white;
+  }
+  .navbar-brand {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .navbar-space {
+    margin-top: 1.5rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  .bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgba(0, 0, 0, var(--bs-bg-opacity)) !important;
+  }
+  @media (min-width: 1400px) {
+    h1 {
+      font-size: 5rem;
+    }
+    nav {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 3rem;
+    }
+    nav {
+      font-size: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .navbar-space {
+      margin-top: 1rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+  }
+  @media (max-width: 628px) {
+    h1 {
+      font-size: 2rem;
+    }
+    nav {
+      font-size: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .navbar-space {
+      margin-top: 1rem;
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+  }
+  @media (max-width: 450px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    nav {
+      font-size: 10px;
+    }
+    .navbar-space {
+      margin-top: 1rem;
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+  }
+  .btn {
+    box-sizing: border-box;
+    border-color: #000000;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4.25rem;
+    margin-bottom: 10px;
+  
+  }
+  
+  .btna{
+      justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    font-family: 'Poppins', sans-serif;
+  }
+  .conteiner {
+    width: 70%;
+    padding: 10px;
+    margin-top: 4rem;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+  }
+  center {
+    margin: 16px 0;
+  }
+  .subtitulo {
+    margin-top: 3rem;
+  }
+  .titulo3 {
+    font-size: 60px;
+  }
+  .a {
+    display: grid;
+  }
+  .UserPNG {
+    padding-top: 1.5rem;
+  }
+  .bodyUser {
+    height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+      url("https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/1610082227143.jpg?v=1649391582319");
+    background-size: cover;
+  }
+  .cardUser {
+    color: black;
+  }
+  .form-label {
+    margin-bottom: 0.5rem;
+  }
+  label {
+    display: inline-block;
+  }
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet label {
+    cursor: default;
+  }
+  .card {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #000000;
+    background-clip: border-box;
+    color: black;
+  }
+  .cardMarcas {
+    border: 10px solid #ffffff;
+    border-radius: 0.5rem;
+  }
+  .form-text {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color:#e2e2e2;
+  }
+  .btninfo {
+    margin-top: 1.5rem;
+    margin-right: 3rem;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: #000000;
+    border-color: white;
+  }
+  
+  .textcards {
+    font-size: 1rem;
+    margin-bottom: 0rem;
+  }
+  .swiper {
+    width: 1300px;
+  }
+  .containerP {
+    position: relative;
+    height: 450px;
+    width: 800px;
+    display: flex;
+    align-items: center;
+  }
+  .swiper-pagination-bullet {
+    height: 7px;
+    width: 26px;
+    border-radius: 25px;
+    color: white;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    opacity: 0.7;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  .swiper-button-next:hover,
+  .swiper-button-prev {
+    opacity: 1;
+    color: white;
+  }
+  .Stylelettles {
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 2rem;
+  }
+  .Stylelettless {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+  }
+  .Stylelettlesss {
+    font-family: "Open Sans", sans-serif;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    font-size: 20px;
+  }
+  .Stylelettlessss {
+    font-family: "Open Sans", sans-serif;
+    font-size: 50px;
+  }
+  .row {
+    max-width: 1400px;
+    width: auto;
+    margin: auto auto;
+  }
+  .conteinera {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .conteineras{
+      padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  .grid-container {
+    display: grid;
+    width: 30%;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    padding-right: 10px;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .texto-justificado {
+    text-align: justify;
+  }
+  .aaa {
+    padding-left: 1rem;
+  }
+  .btnfav {
+    width: 37rem;
+  }
+  .line {
+    background-color: gray;
+    padding: 0.1rem;
+  }
+  .spacebottom {
+    padding-bottom: 1rem;
+  }
+  .btnMetacritic {
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+    background-color: #6c3;
+    font-weight: bold;
+    color: white;
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+  .textScore {
+    padding-top: 2.5rem;
+  }
+  .textScore2 {
+    padding-top: 7rem;
+  }
+  .requisitos {
+    font-size: 12px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+  .sss {
+    padding-left: 8rem;
+  }
+  .games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    list-style-type: none;
+  }
+  .buttonsfav{
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+    color: #000000;
+  }
+  
+  .sectionn{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .sectionn::before{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255,255,255,0.5);
+  
+  }
+  .color{
+      position: absolute;
+      filter: blur(150px);
+  
+  }
+  .ull{
+    position: relative;
+    display: flex;
+    z-index: 2;
+    
+  }
+  .ull li{
+    position: relative;
+    list-style: none;
+    margin: 10px; 
+  }
+  .ull li a{
+    position: relative;
+    width: 80px; 
+    height: 80px;
+    display: inline-block;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .ull li a:hover{
+    transform: translateY(-20px);
+  }
+  .ull li a::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    transform: skewX(45deg) translateX(115px);
+    transition: 0.5s;
+  }
+  .ull li a:hover::before{
+    transform: skewX(45deg) translateX(-150px);
+  }
+  .letrapequenia{
+    font-size: 0.8rem;
+  }
+  .card-body{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 25rem;
+    color:white;
+  }
+  
+    </style>
+  </head>
+  <body class="bodyUser">
+    <header>
+      <!-- Titulos y Logo -->
+    </header>
+    <center>
+      <h1 class="subtitulo Stylelettlessss">
+        Elige 3 juegos que te gusten
+      </h1>
+      <p class="Stylelettless">
+        Estos nos ayudaran a encontrar los juegos que te encantarán, selecciona
+        los que te gusten.
+      </p>
+    </center>
+<div class="conteineras">
+
+    <ul class="games">
+      <li class="game">
+        <a href="/like/Kirby y la tierra olvidada">
+          <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/kirby-y-la-tierra-olvidada-20219242114564_7.jpg?v=1649437668834"
+          class="card-img-top"
+          alt="Kirby y la tierra Olvidada"
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+     
+      <li class="game">
+        <a href="/like/Red dead Redemption II">
+          <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.jfif?v=1649438917470"
+          class="card-img-top"
+          alt="Red dead Redemption"
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Resident Evil Village">
+          <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/FkzwjnJknkrFlozkTdeQBMub.webp?v=1649439307745"
+          class="card-img-top"
+          alt="RE-village"
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Grand Theft Auto 5" >
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/JdvqcPlTYMxXrA1QQJm6TbDX.webp?v=1649439348117"
+          class="card-img-top"
+          alt="Grand Theft Auto V"
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/God Of War - Ragnarok">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc29.jfif?v=1649439496423"
+          class="card-img-top"
+          alt="God of War"
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Halo Infinite">
+          <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/haloinfinite.png?v=1649439782262"
+          class="card-img-top"
+          alt="halo infinite"
+        />
+        </a>
+        
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href = "/like/Warzone">
+          <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/warzone-new.jpg?v=1649441569873"
+          class="card-img-top"
+          alt="Warzone"
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/League Of Legends">
+          <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/EGS_LeagueofLegends_RiotGames_S2_1200x1600-7fd64f0f7b674900bdd172967865d545.jfif?v=1649441570090"
+          class="card-img-top"
+          alt="LEAGUE OF LEGENDS"
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Gang Beasts">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/gang-beasts-20171212231928_11.jpg?v=1649441570315"
+          class="card-img-top"
+          alt="GANG BEASTS"
+        />
+      </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Minecraft">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/11307uYG0CXzRuA9aryByTHYrQLFz-HVQ3VVl7aAysxK15HMpqjkAIcC_R5vdfZt52hAXQNHoYhSuoSq_46_MT_tDBcLu49I.webp?v=1649441570543"
+          class="card-img-top"
+          alt="..."
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Genshin Impact">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/genshin-impact-button-fin-1601346152039.jpg?v=1649441570069"
+          class="card-img-top"
+          alt="..." 
+        />
+        </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Fortnite">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/sbaZEJ4jKCsdLAjQwVPSzMza.webp?v=1649441569697"
+          class="card-img-top"
+          alt="..."
+        />
+      </a>
+
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Valorant">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/9zfox54dfyv41.webp?v=1649443253239"
+          class="card-img-top"
+          alt="..."
+        />
+      </a>
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Doom Eternals">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/doom_eternal_bg_date_m_w_launch.jpg?v=1649443252602"
+          class="card-img-top"
+          alt="..."
+        />
+      </a>
+        
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/RainBow Six Siege">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/cE40dxmsoqJUxZ9MKj3BvNOI.webp?v=1649443252534"
+          class="card-img-top"
+          alt="..."
+        />
+      </a>
+
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+       
+        <a href="/like/Riders Republic">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/huRSi3QcAk2ppr8FyHvy92sg.webp?v=1649454623848"
+          class="card-img-top"
+          alt="..."
+        />
+      </a>
+
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Nintendo Switch Sports">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/nintendo_switch_sports-5608175.jpg?v=1649454622713"
+          class="card-img-top"
+          alt="..."
+        />
+      </a>
+
+        <div class="game-data"></div>
+      </li>
+      <li class="game">
+        <a href="/like/Fifa 21">
+        <img
+          src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/1zfTY2JW41HdDTGJC00Go4nk.webp?v=1649454623392"
+          class="card-img-top"
+          alt="..."
+        />
+      </a>
+        <div class="game-data"></div>
+      </li>
+
+  </ul>
+    </div>
+    <div style="padding-left:1170px;">
+
+      <a href="/user/new/next">
+                <button type="button" class="btn btn-light mt-2 buttonsfav">
+                  Siguiente
+                </button>
+              </a>
+            
+    </div>
+    <footer class="footer">
+     <div class="bodyredes">
+        <section class="sectionn">
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+        </section>
+      </div>
+      <div class="textScore2">
+      <center>
+        <p class="letrapequenia"> Derechos Reservados - Proyecto Final - Algorimos y estructura de datos - Universidad del Valle de Guatemala</p>
+      </center>
+                
+      </div>
+    </footer>
+  </body>
+</html>

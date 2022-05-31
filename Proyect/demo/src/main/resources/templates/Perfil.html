@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- Import css y Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://static.wixstatic.com/media/8bca3a_ccf60ae05d2649a5be9b2fb6da499f38~mv2.png/v1/fill/w_340,h_340,al_c,usm_0.66_1.00_0.01,enc_auto/gameicon.png"
+    />
+    <title>Store Game!</title>
+    <style>
+      /*Hoja de estilos*/
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 0em;
+    background-color: #000000;
+    color: white;
+  }
+  h1 {
+    font-size: 70px;
+    padding-bottom: 20px;
+  }
+  h5 {
+    color: #000000;
+  }
+  p {
+    font-size: 20px;
+    padding-bottom: 40px;
+  }
+  .cover {
+    height: 700px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+      url("https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/gaming-monitor.jpg?v=1649212245514");
+    background-size: cover;
+  }
+  nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+  }
+  .nav-link {
+    color: white;
+  }
+  .navbar-brand {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .navbar-space {
+    margin-top: 1.5rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  .bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgba(0, 0, 0, var(--bs-bg-opacity)) !important;
+  }
+  @media (min-width: 1400px) {
+    h1 {
+      font-size: 5rem;
+    }
+    nav {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 3rem;
+    }
+    nav {
+      font-size: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .navbar-space {
+      margin-top: 1rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+  }
+  @media (max-width: 628px) {
+    h1 {
+      font-size: 2rem;
+    }
+    nav {
+      font-size: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .navbar-space {
+      margin-top: 1rem;
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+  }
+  @media (max-width: 450px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    nav {
+      font-size: 10px;
+    }
+    .navbar-space {
+      margin-top: 1rem;
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+  }
+  .btn {
+    box-sizing: border-box;
+    border-color: #000000;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4.25rem;
+    margin-bottom: 10px;
+  
+  }
+  
+  .btna{
+      justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    font-family: 'Poppins', sans-serif;
+  }
+  .conteiner {
+    width: 70%;
+    padding: 10px;
+    margin-top: 4rem;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+  }
+  center {
+    margin: 16px 0;
+  }
+  .subtitulo {
+    margin-top: 3rem;
+  }
+  .titulo3 {
+    font-size: 60px;
+  }
+  .a {
+    display: grid;
+  }
+  .UserPNG {
+    padding-top: 1.5rem;
+  }
+  .bodyUser {
+    height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+      url("https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/1610082227143.jpg?v=1649391582319");
+    background-size: cover;
+  }
+  .cardUser {
+    color: black;
+  }
+  .form-label {
+    margin-bottom: 0.5rem;
+  }
+  label {
+    display: inline-block;
+  }
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet label {
+    cursor: default;
+  }
+  .card {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #000000;
+    background-clip: border-box;
+    color: black;
+  }
+  .cardMarcas {
+    border: 10px solid #ffffff;
+    border-radius: 0.5rem;
+  }
+  .form-text {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color:#e2e2e2;
+  }
+  .btninfo {
+    margin-top: 1.5rem;
+    margin-right: 3rem;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: #000000;
+    border-color: white;
+  }
+  
+  .textcards {
+    font-size: 1rem;
+    margin-bottom: 0rem;
+  }
+  .swiper {
+    width: 1300px;
+  }
+  .containerP {
+    position: relative;
+    height: 450px;
+    width: 800px;
+    display: flex;
+    align-items: center;
+  }
+  .swiper-pagination-bullet {
+    height: 7px;
+    width: 26px;
+    border-radius: 25px;
+    color: white;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    opacity: 0.7;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  .swiper-button-next:hover,
+  .swiper-button-prev {
+    opacity: 1;
+    color: white;
+  }
+  .Stylelettles {
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 2rem;
+  }
+  .Stylelettless {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+  }
+  .Stylelettlesss {
+    font-family: "Open Sans", sans-serif;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    font-size: 20px;
+  }
+  .Stylelettlessss {
+    font-family: "Open Sans", sans-serif;
+    font-size: 50px;
+  }
+  .row {
+    max-width: 1400px;
+    width: auto;
+    margin: auto auto;
+  }
+  .conteinera {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .conteineras{
+      padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  .grid-container {
+    display: grid;
+    width: 30%;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    padding-right: 10px;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .texto-justificado {
+    text-align: justify;
+  }
+  .aaa {
+    padding-left: 1rem;
+  }
+  .btnfav {
+    width: 37rem;
+  }
+  .line {
+    background-color: gray;
+    padding: 0.1rem;
+  }
+  .spacebottom {
+    padding-bottom: 1rem;
+  }
+  .btnMetacritic {
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+    background-color: #6c3;
+    font-weight: bold;
+    color: white;
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+  .textScore {
+    padding-top: 2.5rem;
+  }
+  .textScore2 {
+    padding-top: 7rem;
+  }
+  .requisitos {
+    font-size: 12px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+  .sss {
+    padding-left: 8rem;
+  }
+  .games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    list-style-type: none;
+  }
+  .buttonsfav{
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+    color: #000000;
+  }
+  
+  .sectionn{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .sectionn::before{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255,255,255,0.5);
+  
+  }
+  .color{
+      position: absolute;
+      filter: blur(150px);
+  
+  }
+  .ull{
+    position: relative;
+    display: flex;
+    z-index: 2;
+    
+  }
+  .ull li{
+    position: relative;
+    list-style: none;
+    margin: 10px; 
+  }
+  .ull li a{
+    position: relative;
+    width: 80px; 
+    height: 80px;
+    display: inline-block;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .ull li a:hover{
+    transform: translateY(-20px);
+  }
+  .ull li a::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    transform: skewX(45deg) translateX(115px);
+    transition: 0.5s;
+  }
+  .ull li a:hover::before{
+    transform: skewX(45deg) translateX(-150px);
+  }
+  .letrapequenia{
+    font-size: 0.8rem;
+  }
+  .card-body{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 25rem;
+    color:white;
+  }
+  
+  </style>
+  </head>
+  <body>
+    <header>
+      <!-- Titulos y Logo -->
+      <nav class="Encabezado bg-dark">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a
+              class="nav-link navbar-space"
+              aria-current="page"
+              href="/main"
+              >Inicio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-space" href="/game">Juegos</a>
+          </li>
+          <a class="navbar-brand" href="/main">
+            <img
+              src="https://cdn.glitch.global/f04ceca0-ee2f-496d-b9d5-bbef3bbe8474/responsive%20icono%20negro.png?v=1651195099969"
+              alt=""
+              width="100"
+              height="88"
+            />
+          </a>
+          <li class="nav-item">
+            <a class="nav-link navbar-space" href="/search">Buscar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-space" href="/user/end">Log Out</a>
+          </li>
+          <li class="UserPNG">
+            <a class="nav-link" href="/user">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-user-circle"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#ffffff"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <circle cx="12" cy="12" r="9" />
+                <circle cx="12" cy="10" r="3" />
+                <path
+                  d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <div class="aaa">
+        <h2 class="sss">Sugerencias:</h2>
+        <div class="row mt-5">
+          <button type="button" class="btn btn-light line"></button>
+        </div>
+      </div>
+      <center>
+        <div class="swiper mySwiper conteinerP " data-aos="fade-up" data-aos-duration="2000">
+          <div class="swiper-wrapper conteinerP">
+            <td th:each="game: ${listGames}">
+              <div class="swiper-slide">
+                <div class="card text-white bg-dark" style="width: 15rem">
+                  <a th:href="@{/game/} + ${game.name}">
+                    <img
+                    th:src="@{${game.logo}}"
+                    class="card-img-top"
+                    th:alt="${game.name}"
+                    />
+                  </a>
+
+                </div>
+              </div>
+            </td>           
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+          <div class="row mt-5">
+          <button type="button" class="btn btn-light line"></button>
+          </div>
+        </div>       
+        <div class="row">
+          <button type="button" class="btn btn-light line mt-5"></button>
+        </div>
+      </center>
+      <div class="aaa">
+        <h2 class="sss">Para ti:</h2>
+        <div class="row mt-5">
+          <button type="button" class="btn btn-light line"></button>
+        </div>
+      </div>
+      <center>
+        <div class="swiper mySwiper conteinerP " data-aos="fade-up" data-aos-duration="2000">
+          <div class="swiper-wrapper conteinerP textScore">
+            <td th:each="game: ${listGamesCat}">
+              <div class="swiper-slide">
+                <div class="card text-white bg-dark" style="width: 15rem">
+                  <a th:href="@{/game/} + ${game.name}">
+                    <img
+                    th:src="@{${game.logo}}"
+                    class="card-img-top"
+                    th:alt="${game.name}"
+                    />
+                  </a>
+
+                </div>
+              </div>
+            </td>           
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+          <div class="row mt-5">
+          <button type="button" class="btn btn-light line"></button>
+          </div>
+        </div>    
+      </center>
+      <div class="aaa">
+        <h2 class="sss">Tus Favoritos:</h2>
+        <div class="row mt-5">
+          <button type="button" class="btn btn-light line"></button>
+        </div>
+      </div>
+      <center>
+        <div class="swiper mySwiper conteinerP " data-aos="fade-up" data-aos-duration="2000">
+          <div class="swiper-wrapper conteinerP">
+            <td th:each="game: ${GamesFAV}">
+              <div class="swiper-slide">
+                <div class="card text-white bg-dark" style="width: 15rem">
+                  <a th:href="@{/game/} + ${game.name}">
+                    <img
+                    th:src="@{${game.logo}}"
+                    class="card-img-top"
+                    th:alt="${game.name}"
+                    />
+                  </a>
+
+                </div>
+              </div>
+            </td>           
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+          <div class="row mt-5">
+          <button type="button" class="btn btn-light line"></button>
+          </div>
+        </div>       
+    </section>
+    <footer class="footer">
+     <div class="bodyredes">
+        <section class="sectionn">
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+
+        </section>
+      </div>
+      <div class="textScore2">
+      <center>
+        <p class="letrapequenia"> Derechos Reservados - Proyecto Final - Algorimos y estructura de datos - Universidad del Valle de Guatemala</p>
+      </center>
+                
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+      });
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 15,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
